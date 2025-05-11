@@ -149,7 +149,7 @@
             </p>
 
             <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
-              <a href="#" class="btn btn-primary">See My Work</a>
+              <a href="#" id="projects-btn" class="btn btn-primary">See My Work</a>
 
               <a href="#" id="contact-btn" class="btn btn-secondary">Contact Me</a>
             </div>
@@ -312,12 +312,19 @@
 
 
 
-
-
       <!-- 
         - #PROJECT
       -->
-
+<script>
+  document.getElementById("project-btn").addEventListener("click", function(e) {
+    e.preventDefault(); // Prevent default anchor behavior
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
+  });
+</script>
+      
       <section class="section project" aria-labelledby="project-label">
         <div class="container">
 
