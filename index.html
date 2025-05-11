@@ -153,7 +153,7 @@
             <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
               <a href="#" class="btn btn-primary">See My Work</a>
 
-              <a href="#" class="btn btn-secondary">Contact Me</a>
+              <a href="#" id="contact-btn" class="btn btn-secondary">Contact Me</a>
             </div>
 
           </div>
@@ -512,6 +512,15 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  <script>
+  document.getElementById("contact-btn").addEventListener("click", function(e) {
+    e.preventDefault(); // Prevent default anchor behavior
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
+  });
+</script>
 </body>
 
 </html>
