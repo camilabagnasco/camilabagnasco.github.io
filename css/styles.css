@@ -5,8 +5,20 @@
   --muted: #94a3b8;
   --primary: #6366f1;
   --border: #1e293b;
+
   --radius: 14px;
 }
+
+/* LIGHT THEME */
+body.light {
+  --bg: #f8fafc;
+  --bg-soft: #ffffff;
+  --text: #020617;
+  --muted: #475569;
+  --primary: #6366f1;
+  --border: #e2e8f0;
+}
+
 
 * {
   margin: 0;
@@ -20,9 +32,10 @@ html {
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
+  background: radial-gradient(circle at top, var(--bg-soft), var(--bg));
   color: var(--text);
   line-height: 1.6;
+  transition: background 0.4s ease, color 0.3s ease;
 }
 
 /* ===== Utilities ===== */
@@ -249,5 +262,42 @@ body {
   .burger {
     display: flex;
   }
+}
+
+/* ===== Theme Toggle ===== */
+.theme-toggle {
+  position: relative;
+  width: 46px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle span {
+  font-size: 14px;
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.theme-toggle .sun {
+  opacity: 0;
+}
+
+body.light .theme-toggle .sun {
+  opacity: 1;
+  transform: translateX(20px);
+}
+
+body.light .theme-toggle .moon {
+  opacity: 0;
 }
 
