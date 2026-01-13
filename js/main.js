@@ -22,3 +22,21 @@ const observer = new IntersectionObserver(
 
 reveals.forEach(el => observer.observe(el));
 
+// Theme toggle
+const toggle = document.getElementById("themeToggle");
+const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+const storedTheme = localStorage.getItem("theme");
+
+if (storedTheme === "light" || (!storedTheme && prefersLight)) {
+  document.body.classList.add("light");
+}
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+
+  const theme = document.body.classList.contains("light")
+    ? "light"
+    : "dark";
+
+  localStorage.setItem("theme", theme);
+});
