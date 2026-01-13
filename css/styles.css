@@ -32,10 +32,13 @@ html {
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  background: radial-gradient(circle at top, var(--bg-soft), var(--bg));
+  background: var(--gradient-main);
   color: var(--text);
   line-height: 1.6;
-  transition: background 0.4s ease, color 0.3s ease;
+
+  transition:
+    background 0.6s ease,
+    color 0.3s ease;
 }
 
 /* ===== Utilities ===== */
@@ -209,6 +212,34 @@ body {
   width: 80%;
   padding: 6rem 0;
 }
+
+.contact {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      600px 300px at 80% 50%,
+      rgba(99,102,241,0.12),
+      transparent 70%
+    );
+  pointer-events: none;
+}
+
+body.light .contact::before {
+  background:
+    radial-gradient(
+      600px 300px at 80% 50%,
+      rgba(99,102,241,0.08),
+      transparent 70%
+    );
+}
+
 
 /* Contenedor full-width pero alineado */
 .contact-inner {
