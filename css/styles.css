@@ -368,3 +368,43 @@ body.light .theme-toggle .moon {
   opacity: 0;
 }
 
+:root {
+  /* Gradient layers */
+  --gradient-main:
+    radial-gradient(
+      1200px 600px at 20% -10%,
+      rgba(99,102,241,0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 400px at 90% 10%,
+      rgba(139,92,246,0.18),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      #020617 0%,
+      #020617 100%
+    );
+}
+
+/* Light theme gradients */
+body.light {
+  --gradient-main:
+    radial-gradient(
+      900px 500px at 20% -10%,
+      rgba(99,102,241,0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px 350px at 90% 10%,
+      rgba(139,92,246,0.12),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #ffffff 100%
+    );
+}
+
