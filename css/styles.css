@@ -121,6 +121,14 @@ body {
     color 0.3s ease;
 }
 
+html, body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
 /* ===== Utilities ===== */
 .container {
   width: min(1200px, 90%);
@@ -183,7 +191,12 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
+  height: var(--header-height);
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.nav {
+  height: 100%;
 }
 
 [data-theme="light"] .header {
@@ -257,7 +270,7 @@ a:hover {
 
 /* ===== Hero ===== */
 .hero {
-  min-height: 90vh;
+  min-height: calc(100vh - var(--header-height));
   display: flex;
   align-items: center;
   padding-block: clamp(4rem, 8vw, 8rem);
@@ -310,7 +323,18 @@ a:hover {
   gap: 1rem;
 }
 
+body {
+  background: var(--bg);
+}
 
+.hero {
+  background: var(--gradient-main);
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
 /* ===== Mockup ===== */
 .mockup {
   height: 360px;
