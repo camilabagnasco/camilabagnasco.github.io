@@ -436,20 +436,24 @@ body.light .contact::before {
   line-height: 1.7;
 }
 
-.faq .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.faq-header {
+  text-align: center;
 }
 
-.faq-header,
 .faq-list {
   width: 100%;
-  max-width: 760px;
+  max-width: 720px;
+  margin-inline: auto;
 }
 
-/* Reduced motion */
+.faq .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
 
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .faq-item,
   .faq-item summary::after {
