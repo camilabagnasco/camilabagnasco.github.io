@@ -337,6 +337,114 @@ body.light .contact::before {
   }
 }
 
+/* =========================
+   FAQ SECTION
+========================= */
+
+.faq {
+  padding: 6rem 1.5rem;
+  background:
+    radial-gradient(
+      800px 400px at 10% -10%,
+      color-mix(in oklab, var(--hc-pink) 20%, transparent),
+      transparent 60%
+    ),
+    var(--bg);
+}
+
+.faq-header {
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+
+.faq-header h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.faq-intro {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* FAQ List */
+
+.faq-list {
+  max-width: 760px;
+}
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  background: var(--bg-soft);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.faq-item[open] {
+  border-color: var(--hc-blue);
+}
+
+/* Summary */
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  position: relative;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  color: var(--hc-blue);
+  transition: transform 0.25s ease;
+}
+
+.faq-item[open] summary::after {
+  content: "–";
+}
+
+/* Focus (keyboard accessibility) */
+
+.faq-item summary:focus-visible {
+  outline: 3px solid var(--hc-blue);
+  outline-offset: 4px;
+}
+
+/* Content */
+
+.faq-content {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--muted);
+}
+
+.faq-content p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item,
+  .faq-item summary::after {
+    transition: none;
+  }
+}
+
 
 /* ===== Footer ===== */
 .footer {
