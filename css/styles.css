@@ -436,6 +436,12 @@ body.light .contact::before {
   line-height: 1.7;
 }
 
+.faq .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
