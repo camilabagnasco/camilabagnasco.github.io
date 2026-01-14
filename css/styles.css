@@ -18,10 +18,10 @@
   --border: #22275a;
 
   --radius: 14px;
-  --header-height: 90px;
+  --header-height: 88px;
 }
 
-section {
+.scroll-section {
   scroll-margin-top: var(--header-height);
 }
 
