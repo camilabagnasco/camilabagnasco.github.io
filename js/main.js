@@ -24,22 +24,28 @@ reveals.forEach(el => observer.observe(el));
 
 // Theme toggle
 const toggle = document.getElementById("themeToggle");
+const root = document.documentElement;
+
+// Preferencia del sistema
 const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
 const storedTheme = localStorage.getItem("theme");
 
-if (storedTheme === "light" || (!storedTheme && prefersLight)) {
-  document.body.classList.add("light");
+// Inicialización
+if (storedTheme) {
+  root.setAttribute("data-theme", storedTheme);
+} else {
+  root.setAttribute("data-theme", prefersLight ? "light" : "dark");
 }
 
+// Toggle manual
 toggle.addEventListener("click", () => {
-  document.body.classList.toggle("light");
+  const current = root.getAttribute("data-theme");
+  const next = current === "light" ? "dark" : "light";
 
-  const theme = document.body.classList.contains("light")
-    ? "light"
-    : "dark";
+  root.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+});
 
-  localStorage.setItem("theme", theme);
-}); 
 
 <script>
   const links = document.querySelectorAll('.nav a');
