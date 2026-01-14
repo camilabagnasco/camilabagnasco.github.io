@@ -152,6 +152,10 @@ a:hover {
   padding: 1rem 0;
 }
 
+.nav a.active {
+  color: var(--accent);
+}
+
 .logo {
   font-weight: 900;
   font-size: 1.2rem;
