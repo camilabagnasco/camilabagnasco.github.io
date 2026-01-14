@@ -118,6 +118,23 @@ a:hover {
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
+[data-theme="light"] .header {
+  background-color: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .header {
+  background-color: rgba(8, 10, 30, 0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] .header a,
+[data-theme="light"] .header button {
+  color: #0b0d1a;
+}
+
 .nav {
   display: flex;
   align-items: center;
