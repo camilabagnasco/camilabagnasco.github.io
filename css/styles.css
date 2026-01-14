@@ -215,9 +215,6 @@ a:hover {
   gap: 1rem;
 }
 
-.hero + section {
-  padding-top: clamp(6rem, 10vw, 10rem);
-}
 
 /* ===== Mockup ===== */
 .mockup {
