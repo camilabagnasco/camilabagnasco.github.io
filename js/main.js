@@ -47,7 +47,6 @@ toggle.addEventListener("click", () => {
 });
 
 
-<script>
   const links = document.querySelectorAll('.nav a');
   const sections = document.querySelectorAll('section');
 
@@ -64,5 +63,4 @@ toggle.addEventListener("click", () => {
   }, { threshold: 0.6 });
 
   sections.forEach(section => observer.observe(section));
-</script>
 
