@@ -18,8 +18,12 @@
   --border: #22275a;
 
   --radius: 14px;
+  --header-height: 90px;
 }
 
+section {
+  scroll-margin-top: var(--header-height);
+}
 
 /* LIGHT THEME */
 body.light {
