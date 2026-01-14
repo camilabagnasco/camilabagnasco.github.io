@@ -623,7 +623,6 @@ html[data-theme="light"] body .contact::before {
   width: 46px;
   height: 26px;
   border-radius: 999px;
-  background: var(--border);
   border: none;
   cursor: pointer;
   display: flex;
@@ -642,7 +641,19 @@ html[data-theme="light"] body .contact::before {
 }
 
 .theme-toggle .sun {
+  opacity: 1;
+}
+
+.theme-toggle .moon {
   opacity: 0;
+}
+
+html[data-theme="light"] .theme-toggle {
+  background: #d8dcf0;
+}
+
+html[data-theme="dark"] .theme-toggle {
+  background: #22275a;
 }
 
 html[data-theme="light"] body .theme-toggle .sun {
@@ -653,5 +664,3 @@ html[data-theme="light"] body .theme-toggle .sun {
 html[data-theme="light"] body .theme-toggle .moon {
   opacity: 0;
 }
-
-
