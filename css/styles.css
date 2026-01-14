@@ -1,34 +1,35 @@
 :root {
-  /* Base surfaces */
-  --bg: #05060f;
-  --bg-soft: #07081a;
+  /* Base surfaces (más oscuras para contraste real) */
+  --bg: #040615;
+  --bg-soft: #06081d;
 
-  /* Text */
-  --text: #f1f5f9;
-  --muted: #a1a8c4;
+  /* Text (más claro y neutro) */
+  --text: #f8fafc;       /* ↑ contraste */
+  --muted: #c2c7de;      /* readable, no gris muerto */
 
-  /* HelixCare gradient colors */
-  --hc-peach: #f3d6b4;
-  --hc-pink: #f4a3b8;
-  --hc-lilac: #b9a2d8;
-  --hc-blue: #6f8edc;
+  /* HelixCare refined accents */
+  --hc-peach: #f1cfa8;
+  --hc-pink: #f19ab2;
+  --hc-lilac: #a994d6;   /* ↑ saturación controlada */
+  --hc-blue: #5f7fd6;    /* ↑ contraste */
 
-  /* Primary accent */
-  --primary: var(--hc-lilac);
-  --border: #1b1f3a;
+  /* Primary */
+  --primary: var(--hc-blue);
+  --border: #22275a;
 
   --radius: 14px;
 }
 
+
 /* LIGHT THEME */
 body.light {
   --bg: #ffffff;
-  --bg-soft: #f8fafc;
+  --bg-soft: #f3f5fb;
 
-  --text: #05060f;
-  --muted: #5b6280;
+  --text: #0b1024;      /* muy legible */
+  --muted: #3f466b;     /* WCAG AA garantizado */
 
-  --border: #e2e8f0;
+  --border: #d8dcf0;
 }
 
 * {
@@ -75,15 +76,17 @@ body {
     var(--hc-lilac),
     var(--hc-blue)
   );
-  color: #05060f;
+
+  color: #0b1024; /* contraste ≥ 7:1 */
+  font-weight: 700;
+
   box-shadow:
-    0 12px 30px rgba(185,162,216,0.45);
+    0 12px 30px rgba(95,127,214,0.45);
 }
 
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 18px 45px rgba(185,162,216,0.6);
+.btn-primary:focus-visible {
+  outline: 3px solid var(--hc-blue);
+  outline-offset: 3px;
 }
 
 
@@ -94,6 +97,16 @@ body {
 
 .btn:hover {
   transform: translateY(-3px);
+}
+
+a {
+  color: var(--hc-blue);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* ===== Header ===== */
@@ -234,7 +247,7 @@ body {
 
 /* ===== Contact Section ===== */
 .contact {
-  width: 80%;
+  width: 100%;
   padding: 6rem 0;
 }
 
@@ -303,37 +316,24 @@ body.light .contact::before {
 }
 
 .contact-item strong {
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 0.2rem;
+  color: var(--text);
 }
 
 .contact-item span {
   color: var(--muted);
-  font-size: 0.95rem;
 }
+
 
 /* Emoji bubble */
 .contact-item .emoji {
-  background:
-    linear-gradient(
-      135deg,
-      var(--hc-peach),
-      var(--hc-pink),
-      var(--hc-lilac),
-      var(--hc-blue)
-    );
-
-  box-shadow:
-    0 10px 35px rgba(185,162,216,0.45);
+  color: #0b1024; /* icon legible sobre gradiente */
 }
 
 
-/* Responsive */
-@media (max-width: 900px) {
-  .contact-inner {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
 
