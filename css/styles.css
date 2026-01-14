@@ -2,7 +2,7 @@
   /* Base surfaces (más oscuras para contraste real) */
   --bg: #040615;
   --bg-soft: #06081d;
-
+  
   /* Text (más claro y neutro) */
   --text: #f8fafc;       /* ↑ contraste */
   --muted: #c2c7de;      /* readable, no gris muerto */
@@ -19,13 +19,78 @@
 
   --radius: 14px;
 }
+ 
+/* Gradient layers */
+:root {
+  --gradient-main:
+    radial-gradient(
+      900px 500px at 10% -10%,
+      rgba(243,214,180,0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 400px at 45% 0%,
+      rgba(244,163,184,0.22),
+      transparent 55%
+    ),
+    radial-gradient(
+      700px 350px at 75% 10%,
+      rgba(185,162,216,0.22),
+      transparent 55%
+    ),
+    radial-gradient(
+      600px 300px at 95% 20%,
+      rgba(111,142,220,0.22),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      var(--bg-soft) 0%,
+      var(--bg) 100%
+    );
+}
+
+:root {
+  --header-height: 88px;
+}
+
+/* Light theme gradients */
+html[data-theme="light"] body {
+  --gradient-main:
+    radial-gradient(
+      900px 500px at 10% -10%,
+      rgba(243,214,180,0.35),
+      transparent 65%
+    ),
+    radial-gradient(
+      800px 400px at 45% 0%,
+      rgba(244,163,184,0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px 350px at 75% 10%,
+      rgba(185,162,216,0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      600px 300px at 95% 20%,
+      rgba(111,142,220,0.35),
+      transparent 65%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fafc 100%
+    );
+}
+
 
 .scroll-section {
   scroll-margin-top: var(--header-height);
 }
 
 /* LIGHT THEME */
-body.light {
+html[data-theme="light"] body {
   --bg: #ffffff;
   --bg-soft: #f3f5fb;
 
@@ -310,7 +375,7 @@ a:hover {
   pointer-events: none;
 }
 
-body.light .contact::before {
+html[data-theme="light"] body .contact::before {
   background:
     radial-gradient(
       600px 300px at 80% 50%,
@@ -580,75 +645,13 @@ body.light .contact::before {
   opacity: 0;
 }
 
-body.light .theme-toggle .sun {
+html[data-theme="light"] body .theme-toggle .sun {
   opacity: 1;
   transform: translateX(20px);
 }
 
-body.light .theme-toggle .moon {
+html[data-theme="light"] body .theme-toggle .moon {
   opacity: 0;
-}
-
-
-  /* Gradient layers */
-:root {
-  --gradient-main:
-    radial-gradient(
-      900px 500px at 10% -10%,
-      rgba(243,214,180,0.18),
-      transparent 60%
-    ),
-    radial-gradient(
-      800px 400px at 45% 0%,
-      rgba(244,163,184,0.22),
-      transparent 55%
-    ),
-    radial-gradient(
-      700px 350px at 75% 10%,
-      rgba(185,162,216,0.22),
-      transparent 55%
-    ),
-    radial-gradient(
-      600px 300px at 95% 20%,
-      rgba(111,142,220,0.22),
-      transparent 60%
-    ),
-    linear-gradient(
-      180deg,
-      var(--bg-soft) 0%,
-      var(--bg) 100%
-    );
-}
-
-
-/* Light theme gradients */
-body.light {
-  --gradient-main:
-    radial-gradient(
-      900px 500px at 10% -10%,
-      rgba(243,214,180,0.35),
-      transparent 65%
-    ),
-    radial-gradient(
-      800px 400px at 45% 0%,
-      rgba(244,163,184,0.35),
-      transparent 60%
-    ),
-    radial-gradient(
-      700px 350px at 75% 10%,
-      rgba(185,162,216,0.35),
-      transparent 60%
-    ),
-    radial-gradient(
-      600px 300px at 95% 20%,
-      rgba(111,142,220,0.35),
-      transparent 65%
-    ),
-    linear-gradient(
-      180deg,
-      #ffffff 0%,
-      #f8fafc 100%
-    );
 }
 
 
