@@ -135,6 +135,12 @@ a:hover {
   color: #0b0d1a;
 }
 
+.header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -162,11 +168,6 @@ a:hover {
   color: var(--text);
 }
 
-.site-header.is-scrolled {
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
 
 /* ===== Burger ===== */
 .burger {
