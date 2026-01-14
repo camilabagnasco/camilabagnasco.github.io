@@ -41,12 +41,3 @@ toggle.addEventListener("click", () => {
   localStorage.setItem("theme", theme);
 }); 
 
-///header
-
-<script>
-  const header = document.querySelector('.site-header');
-
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('is-scrolled', window.scrollY > 20);
-  });
-</script>
