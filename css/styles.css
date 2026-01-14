@@ -112,10 +112,11 @@ html {
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  background: var(--gradient-main);
+  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-
+  min-height: 100vh;
+  
   transition:
     background 0.6s ease,
     color 0.3s ease;
@@ -125,9 +126,6 @@ html, body {
   min-height: 100%;
 }
 
-body {
-  min-height: 100vh;
-}
 
 /* ===== Utilities ===== */
 .container {
@@ -270,10 +268,16 @@ a:hover {
 
 /* ===== Hero ===== */
 .hero {
+  background: var(--gradient-main);
   min-height: calc(100vh - var(--header-height));
   display: flex;
   align-items: center;
   padding-block: clamp(4rem, 8vw, 8rem);
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
 }
 
 .hero-grid {
