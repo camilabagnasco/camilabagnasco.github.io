@@ -442,6 +442,12 @@ body.light .contact::before {
   align-items: center;
 }
 
+.faq-header,
+.faq-list {
+  width: 100%;
+  max-width: 760px;
+}
+
 /* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
