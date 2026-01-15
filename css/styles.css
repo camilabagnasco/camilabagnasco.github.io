@@ -428,48 +428,63 @@ html[data-theme="light"] body .contact::before {
 
 .faq {
   padding: 6rem 1.5rem;
+
+  /* Background: healthcare blue */
   background:
     radial-gradient(
-      800px 400px at 10% -10%,
-      color-mix(in oklab, var(--hc-pink) 20%, transparent),
+      900px 500px at 10% -10%,
+      rgba(244, 163, 184, 0.18),
       transparent 60%
     ),
-    var(--bg);
+    #07276A;
+
+  color: #f8fafc;
 }
+
+/* Header */
 
 .faq-header {
   max-width: 640px;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .faq-header h2 {
   font-size: clamp(2rem, 3vw, 2.5rem);
   line-height: 1.2;
   margin-bottom: 0.75rem;
+  color: #ffffff;
 }
 
 .faq-intro {
-  color: var(--muted);
+  color: #dbeafe;
   font-size: 1.05rem;
 }
 
 /* FAQ List */
 
 .faq-list {
-  max-width: 760px;
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
 }
 
+/* FAQ Item */
+
 .faq-item {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius);
   margin-bottom: 1rem;
-  background: var(--bg-soft);
+  background: rgba(255, 255, 255, 0.06);
   overflow: hidden;
-  transition: border-color 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
 .faq-item[open] {
   border-color: var(--hc-blue);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Summary */
@@ -479,7 +494,7 @@ html[data-theme="light"] body .contact::before {
   cursor: pointer;
   padding: 1.25rem 1.5rem;
   font-weight: 600;
-  color: var(--text);
+  color: #ffffff;
   position: relative;
 }
 
@@ -513,11 +528,7 @@ html[data-theme="light"] body .contact::before {
 
 .faq-content {
   padding: 0 1.5rem 1.5rem;
-  color: var(--muted);
-}
-
-.faq-section {
-  background-color: var(--faq-bg);
+  color: #dbeafe;
 }
 
 .faq-content p {
@@ -525,15 +536,7 @@ html[data-theme="light"] body .contact::before {
   line-height: 1.7;
 }
 
-.faq-header {
-  text-align: center;
-}
-
-.faq-list {
-  width: 100%;
-  max-width: 720px;
-  margin-inline: auto;
-}
+/* Layout */
 
 .faq .container {
   display: grid;
