@@ -2,6 +2,7 @@
   /* Surfaces */
   --bg: #05060f;
   --bg-soft: #07081a;
+  --faq-bg: #07276A;
 
   /* Text */
   --text: #f1f5f9;
@@ -513,6 +514,10 @@ html[data-theme="light"] body .contact::before {
 .faq-content {
   padding: 0 1.5rem 1.5rem;
   color: var(--muted);
+}
+
+.faq-section {
+  background-color: var(--faq-bg);
 }
 
 .faq-content p {
