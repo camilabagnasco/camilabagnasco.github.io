@@ -9,7 +9,7 @@ burger.addEventListener("click", () => {
 // Reveal on scroll
 const reveals = document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver(
+const revealObserver = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -20,7 +20,7 @@ const observer = new IntersectionObserver(
   { threshold: 0.15 }
 );
 
-reveals.forEach(el => observer.observe(el));
+reveals.forEach(el => revealObserver.observe(el));
 
 // Theme toggle
 const toggle = document.getElementById("themeToggle");
@@ -50,17 +50,17 @@ toggle.addEventListener("click", () => {
   const links = document.querySelectorAll('.nav a');
   const sections = document.querySelectorAll('section');
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        links.forEach(link => link.classList.remove('active'));
-        const active = document.querySelector(
-          `.nav a[href="#${entry.target.id}"]`
-        );
-        active?.classList.add('active');
-      }
-    });
-  }, { threshold: 0.6 });
+  const navObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      links.forEach(link => link.classList.remove("active"));
+      const active = document.querySelector(
+        `.nav a[href="#${entry.target.id}"]`
+      );
+      active?.classList.add("active");
+    }
+  });
+}, { threshold: 0.6 });
 
-  sections.forEach(section => observer.observe(section));
+sections.forEach(section => navObserver.observe(section));
 
