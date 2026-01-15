@@ -426,6 +426,10 @@ html[data-theme="light"] body .contact::before {
    FAQ SECTION
 ========================= */
 
+section.faq {
+  background: #07276A !important;
+}
+
 .faq {
   padding: 6rem 1.5rem;
 
