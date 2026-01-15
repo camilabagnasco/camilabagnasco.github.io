@@ -280,6 +280,10 @@ a:hover {
   isolation: isolate;
 }
 
+.hero {
+  outline: 4px solid red;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
