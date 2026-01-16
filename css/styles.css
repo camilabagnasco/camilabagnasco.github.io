@@ -655,3 +655,158 @@ html[data-theme="light"] body .theme-toggle .moon {
   opacity: 0;
 }
 
+/* =========================
+   WORKFLOW SECTION
+========================= */
+
+.workflow {
+  padding: 7rem 1.5rem;
+  background: #a8c7f0; /* similar a la referencia */
+}
+
+.workflow-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 5rem;
+}
+
+.workflow-header h2 {
+  font-size: clamp(2.2rem, 3vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+
+.workflow-header p {
+  color: #1e293b;
+}
+
+/* Timeline layout */
+
+.workflow-timeline {
+  position: relative;
+  display: grid;
+  gap: 5rem;
+}
+
+/* Vertical line */
+.workflow-timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255,255,255,0.7);
+  transform: translateX(-50%);
+}
+
+/* Step */
+
+.workflow-step {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Content */
+
+.workflow-content {
+  max-width: 420px;
+}
+
+.workflow-content.left {
+  justify-self: end;
+  text-align: left;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+.workflow-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #020617;
+}
+
+.workflow-content p {
+  color: #1e293b;
+  line-height: 1.7;
+}
+
+/* Marker */
+
+.workflow-marker {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f97316;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  margin: auto;
+  z-index: 1;
+}
+
+.workflow-marker.accent {
+  background: #fb7185;
+}
+
+.workflow-marker.dark {
+  background: #1e3a8a;
+}
+
+/* Visual card */
+
+.workflow-visual {
+  justify-self: start;
+}
+
+.workflow-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  max-width: 320px;
+}
+
+.workflow-card strong {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.workflow-card ul {
+  padding-left: 1rem;
+}
+
+.workflow-card li {
+  margin-bottom: 0.5rem;
+}
+
+.workflow-card.highlight {
+  box-shadow: 0 20px 50px rgba(251,113,133,0.35);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .workflow-step {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .workflow-timeline::before {
+    display: none;
+  }
+
+  .workflow-content.left,
+  .workflow-visual {
+    justify-self: center;
+  }
+}
