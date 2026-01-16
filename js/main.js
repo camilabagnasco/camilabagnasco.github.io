@@ -21,24 +21,22 @@ const revealObserver = new IntersectionObserver(
 );
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const reveals = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2
+    }
+  );
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target); // aparece solo una vez
-          }
-        });
-      },
-      {
-        threshold: 0.2, // 20% visible
-      }
-    );
-
-    reveals.forEach((el) => observer.observe(el));
+  document.querySelectorAll(".reveal").forEach(el => {
+    observer.observe(el);
   });
 </script>
 
