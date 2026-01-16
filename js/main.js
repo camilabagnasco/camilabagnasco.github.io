@@ -1,65 +1,50 @@
-// Mobile menu
+/* =========================
+   Mobile menu
+========================= */
 const burger = document.getElementById("burger");
 const navLinks = document.getElementById("navLinks");
 
-burger.addEventListener("click", () => {
+burger?.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
 
-// Reveal on scroll
-const reveals = document.querySelectorAll(".reveal");
+
+/* =========================
+   Reveal on scroll
+========================= */
+const revealElements = document.querySelectorAll(".reveal");
 
 const revealObserver = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("active");
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.15 }
+  { threshold: 0.2 }
 );
 
-<script>
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.2
-    }
-  );
-
-  document.querySelectorAll(".reveal").forEach(el => {
-    observer.observe(el);
-  });
-</script>
+revealElements.forEach(el => revealObserver.observe(el));
 
 
-reveals.forEach(el => revealObserver.observe(el));
-
-// Theme toggle
+/* =========================
+   Theme toggle
+========================= */
 const toggle = document.getElementById("themeToggle");
 const root = document.documentElement;
 
-// Preferencia del sistema
 const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
 const storedTheme = localStorage.getItem("theme");
 
-// Inicialización
 if (storedTheme) {
   root.setAttribute("data-theme", storedTheme);
 } else {
   root.setAttribute("data-theme", prefersLight ? "light" : "dark");
 }
 
-// Toggle manual
-toggle.addEventListener("click", () => {
+toggle?.addEventListener("click", () => {
   const current = root.getAttribute("data-theme");
   const next = current === "light" ? "dark" : "light";
 
@@ -68,20 +53,25 @@ toggle.addEventListener("click", () => {
 });
 
 
-  const links = document.querySelectorAll('.nav a');
-  const sections = document.querySelectorAll('section');
+/* =========================
+   Active nav link on scroll
+========================= */
+const links = document.querySelectorAll(".nav a");
+const sections = document.querySelectorAll("section");
 
-  const navObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      links.forEach(link => link.classList.remove("active"));
-      const active = document.querySelector(
-        `.nav a[href="#${entry.target.id}"]`
-      );
-      active?.classList.add("active");
-    }
-  });
-}, { threshold: 0.6 });
+const navObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(link => link.classList.remove("active"));
+        const active = document.querySelector(
+          `.nav a[href="#${entry.target.id}"]`
+        );
+        active?.classList.add("active");
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
 
 sections.forEach(section => navObserver.observe(section));
-
