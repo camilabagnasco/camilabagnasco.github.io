@@ -114,13 +114,7 @@ html {
 }
 
 .btn-primary {
-  background: linear-gradient(
-    135deg,
-    var(--hc-peach),
-    var(--hc-pink),
-    var(--hc-lilac),
-    var(--hc-blue)
-  );
+  background: #07276A;
 
   color: #0b1024; /* contraste ≥ 7:1 */
   font-weight: 700;
