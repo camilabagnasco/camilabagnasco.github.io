@@ -59,6 +59,17 @@ html[data-theme="light"] {
   --header-height: 88px;
 }
 
+.hero h1 span {
+  background-size: 300% 300%;
+  animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+  }
+
 .scroll-section {
   scroll-margin-top: var(--header-height);
 }
@@ -276,22 +287,10 @@ background: linear-gradient(
     var(--hc-lilac),
     var(--hc-blue)
   );
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-
-.gradient-text {
-  background-size: 300% 300%;
-  animation: gradientMove 6s ease infinite;
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-  }
 }
 
 .hero p {
