@@ -55,32 +55,6 @@ html[data-theme="light"] {
     linear-gradient(180deg, #f8fafc, #ffffff);
 }
 
-.gradient-text {
-  background: linear-gradient(
-    90deg,
-    var(--hc-peach),
-    var(--hc-pink),
-    var(--hc-lilac),
-    var(--hc-blue)
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-.gradient-text {
-  background-size: 300% 300%;
-  animation: gradientMove 6s ease infinite;
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 :root {
   --header-height: 88px;
 }
@@ -292,6 +266,32 @@ a:hover {
   font-size: clamp(2.8rem, 5vw, 4.2rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
+}
+
+.hero h1 span {
+background: linear-gradient(
+    90deg,
+    var(--hc-peach),
+    var(--hc-pink),
+    var(--hc-lilac),
+    var(--hc-blue)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+.gradient-text {
+  background-size: 300% 300%;
+  animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+  }
 }
 
 .hero p {
