@@ -314,6 +314,35 @@ body {
   isolation: isolate;
 }
 
+/* ===== Benefits ===== */
+.benefits {
+  padding: 6rem 2rem;
+}
+
+.benefits-header {
+  max-width: 700px;
+  margin-bottom: 4rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
 
 /* ===== Features ===== */
 .features {
