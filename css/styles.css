@@ -314,35 +314,71 @@ body {
   isolation: isolate;
 }
 
-/* ===== Benefits ===== */
-.benefits {
-  padding: 6rem 2rem;
+/* =========================
+   BENEFITS SECTION
+========================= */
+
+.benefits-section {
+  background-color: #071c3a; /* oscuro elegante, no gradiente */
+  padding: clamp(4rem, 6vw, 6rem) 1.5rem;
+}
+
+.benefits-container {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .benefits-header {
-  max-width: 700px;
-  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-bottom: 3.5rem;
 }
 
+.benefits-header h2 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.benefits-header p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Grid */
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
 
+/* Cards */
 .benefit-card {
-  padding: 2rem;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  padding: 1.8rem;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .benefit-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
+
+.benefit-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: #ffffff;
+}
+
+.benefit-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
 
 /* ===== Features ===== */
 .features {
