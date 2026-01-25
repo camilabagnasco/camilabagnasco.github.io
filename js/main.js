@@ -8,6 +8,11 @@ burger?.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
 
+navLinksItems.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
 
 /* =========================
    Reveal on scroll
