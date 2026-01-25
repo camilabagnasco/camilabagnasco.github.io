@@ -14,64 +14,52 @@ burger?.addEventListener("click", () => {
 ========================= */
 const revealElements = document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
+if (revealElements.length) {
+  const revealObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
-revealElements.forEach(el => revealObserver.observe(el));
-
-
-/* =========================
-   Theme toggle
-========================= */
-const toggle = document.getElementById("themeToggle");
-const root = document.documentElement;
-
-const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-const storedTheme = localStorage.getItem("theme");
-
-if (storedTheme) {
-  root.setAttribute("data-theme", storedTheme);
-} else {
-  root.setAttribute("data-theme", prefersLight ? "light" : "dark");
+  revealElements.forEach(el => revealObserver.observe(el));
 }
-
-toggle?.addEventListener("click", () => {
-  const current = root.getAttribute("data-theme");
-  const next = current === "light" ? "dark" : "light";
-
-  root.setAttribute("data-theme", next);
-  localStorage.setItem("theme", next);
-});
 
 
 /* =========================
    Active nav link on scroll
 ========================= */
-const links = document.querySelectorAll(".nav a");
-const sections = document.querySelectorAll("section");
+const navLinksItems = document.querySelectorAll(".nav a[href^='#']");
+const sections = document.querySelectorAll("section[id]");
 
-const navObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        links.forEach(link => link.classList.remove("active"));
-        const active = document.querySelector(
-          `.nav a[href="#${entry.target.id}"]`
-        );
-        active?.classList.add("active");
-      }
-    });
-  },
-  { threshold: 0.6 }
-);
+if (navLinksItems.length && sections.length) {
+  const navObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinksItems.forEach(link =>
+            link.classList.remove("active")
+          );
 
-sections.forEach(section => navObserver.observe(section));
+          const activeLink = document.querySelector(
+            `.nav a[href="#${entry.target.id}"]`
+          );
+
+          activeLink?.classList.add("active");
+        }
+      });
+    },
+    {
+      threshold: 0.6,
+      rootMargin: "-88px 0px 0px 0px" // compensa header sticky
+    }
+  );
+
+  sections.forEach(section => navObserver.observe(section));
+}
+;
