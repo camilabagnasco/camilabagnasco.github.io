@@ -3,16 +3,19 @@
 ========================= */
 const burger = document.getElementById("burger");
 const navLinks = document.getElementById("navLinks");
+const navLinksItems = document.querySelectorAll(".nav a[href^='#']");
 
 burger?.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
 
-navLinksItems.forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
+if (navLinksItems.length) {
+  navLinksItems.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+    });
   });
-});
+}
 
 /* =========================
    Reveal on scroll
