@@ -8,7 +8,7 @@
   --secondary: #dbe4ff;
   --secondary-2: #ef7148;
 
-  --tertiary: #F9CA29;
+  --tertiary: #F8F3ED;
   --tertiary-2: #89adff;
 
   /* =========================
@@ -91,8 +91,8 @@ html {
 .btn-primary {
   background: linear-gradient(
     135deg,
-    var(--primary),
-    var(--tertiary-2)
+    var(--secondary-2),
+    var(--tertiary)
   );
   color: white;
   font-weight: 700;
@@ -111,7 +111,7 @@ html {
 .btn-secondary {
   background: transparent;
   border: 1px solid var(--border);
-  color: var(--primary);
+  color: var(--primary-2);
 }
 
 .btn:hover {
@@ -119,7 +119,7 @@ html {
 }
 
 a {
-  color: var(--primary);
+  color: var(--primary-2);
 }
 
 a:hover {
