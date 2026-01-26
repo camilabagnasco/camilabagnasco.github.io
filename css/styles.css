@@ -587,7 +587,6 @@ section.faq {
 
 /* ===== Animations ===== */
 .reveal {
-  opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease;
 }
@@ -787,7 +786,6 @@ section.faq {
 ========================= */
 
 .reveal {
-  opacity: 0;
   transform: translateY(48px);
   transition:
     opacity 0.9s ease,
