@@ -104,7 +104,7 @@ html {
 }
 
 .btn-primary:focus-visible {
-  outline: 3px solid var(--hc-blue);
+  outline: 3px solid var(--secondary-2);
   outline-offset: 3px;
 }
 
@@ -534,7 +534,7 @@ section.faq {
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.25rem;
-  color: var(--hc-blue);
+  color: var(--secondary-2);
   transition: transform 0.25s ease;
 }
 
@@ -545,7 +545,7 @@ section.faq {
 /* Focus (keyboard accessibility) */
 
 .faq-item summary:focus-visible {
-  outline: 3px solid var(--hc-blue);
+  outline: 3px solid var(--tertiary-2);
   outline-offset: 4px;
 }
 
