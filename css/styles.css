@@ -808,3 +808,10 @@ section.faq {
   }
 }
 
+.hero,
+.hero * {
+  color: #0f172a !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
