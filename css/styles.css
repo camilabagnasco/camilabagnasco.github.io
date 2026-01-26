@@ -199,11 +199,15 @@ a:hover {
   display: flex;
   align-items: center;
   padding-block: clamp(4rem, 8vw, 8rem);
-}
-
-.hero {
   position: relative;
   isolation: isolate;
+  z-index: 10;
+}
+
+.hero-background,
+.hero-bg,
+.gradient-bg {
+  z-index: 0;
 }
 
 .hero h1 span {
@@ -267,11 +271,6 @@ body {
 
 .hero {
   background: var(--gradient-main);
-}
-
-.hero {
-  position: relative;
-  isolation: isolate;
 }
 
 /* =========================
