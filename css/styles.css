@@ -209,7 +209,6 @@ a:hover {
 .hero h1 span {
   background: linear-gradient(135deg,#6366f1,#8b5cf6);
   -webkit-background-clip: text;
-  color: transparent;
 }
 
 .hero-grid {
